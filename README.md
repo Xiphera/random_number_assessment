@@ -4,7 +4,7 @@
 
 This is the general guidelines and instructions to run common test suites to random data binary files. This repository does not include any of the test suite softwares, only a script, C application for _TestU01_ and instructions how to run these softwares. These test suites are provided by a 3rd party and credit goes to them.
 
-![alt text](https://xiphera.com/img/xiphera_logo_embedded.png "Xiphera") uses and recommends using only _practrand_, _gjrand_ and _TestU01_ to assess the quality of the random numbers. There have been several cases where only these three have shown signs of statistical anomalies and several cases where several others have also indicated the same result as these test suites. Literature also praises these two test suites above others.
+![alt text](https://xiphera.com/img/xiphera_logo_embedded_12pt.png "Xiphera") uses and recommends using only _practrand_, _gjrand_ and _TestU01_ to assess the quality of the random numbers. There have been several cases where only these three have shown signs of statistical anomalies and several cases where several others have also indicated the same result as these test suites. Literature also praises these two test suites above others.
 
 These test suites require a lot of data to guarantee the statistical quality of the random numbers. Xiphera has piped multiple tebibytes (TiB) of TRNG data to each of these test suites. However, practical and still effective amount of data is between two and four gibibytes (GiB).
 
