@@ -6,17 +6,17 @@ This is the general guidelines and instructions to run common test suites to ran
 
 ![alt text](https://xiphera.com/img/xiphera_logo_embedded_12pt.png "Xiphera") uses and recommends using only _practrand_, _gjrand_ and _TestU01_ to assess the quality of the random numbers. There have been several cases where only these three have shown signs of statistical anomalies and several cases where several others have also indicated the same result as these test suites. Literature also praises these two test suites above others.
 
-These test suites require a lot of data to guarantee the statistical quality of the random numbers. Xiphera has piped multiple tebibytes (TiB) of TRNG data to each of these test suites. However, practical and still effective amount of data is between two and four gibibytes (GiB).
+These test suites require a lot of data to guarantee the statistical quality of the random numbers. ![alt text](https://xiphera.com/img/xiphera_logo_embedded_12pt.png "Xiphera") has piped multiple tebibytes (TiB) of TRNG data to each of these test suites. However, practical and still effective amount of data is between two and four gibibytes (GiB).
 
 There are several other widely used assessment suites like NIST STS (SP800-22), NIST SP800-90B, Dieharder, FIPS, AIS-31 and others. These can be used to verify that TRNG complies with standards but are not encouraged otherwise.
 
-Installation guides are provided here that are encouraged, however there is also `install.sh` which does the job, but does not have any guarantee that it will work. All installation are done from this folder and it presumed that there is random file located at `../random/xip8001b.bin`. This is the default location where the  [Xiphera's TRNG AWS](https://www.xilinx.com/products/acceleration-solutions/true-random-number-generator.html "Xiphera AWS implementation guide website") evaluation platform extracts the random binary data file.
+Installation guides are provided here that are encouraged, however there is also `install.sh` which does the job, but does not have any guarantee that it will work. All installation are done from this folder and it presumed that there is random file located at `../random/xip8001b.bin`. This is the default location where the  [![alt text](https://xiphera.com/img/xiphera_logo_embedded_12pt.png "Xiphera")'s TRNG AWS](https://www.xilinx.com/products/acceleration-solutions/true-random-number-generator.html "Xiphera AWS implementation guide website") evaluation platform extracts the random binary data file.
 
 ### PractRand
 
 One of the most thorough statistical test suites, is PractRand (Practically Random), a C++ library of also providing statistical tests for any types of RNGs.
 
-PractRand is mainly used with a PRNG, because the integrated and independent PRNGs can be directly connected to the test suite without storing all the required data into a file. This is possible also with the Xipheras TRNG. However, PractRand supports file analysis also.
+PractRand is mainly used with a PRNG, because the integrated and independent PRNGs can be directly connected to the test suite without storing all the required data into a file. This is possible also with the ![alt text](https://xiphera.com/img/xiphera_logo_embedded_12pt.png "Xiphera")s TRNG. However, PractRand supports file analysis also.
 
 Download and extract the latest version of the software from [SourceForge](https://sourceforge.net/projects/pracrand/files/ "sourceforge.net/projects/pracrand/files/"). Or use the commands below.
 
@@ -80,7 +80,7 @@ cd ./gjrand.4.3.0.0/testunif/
 
 ### TestU01
 
-TestU01 is very comprehensive statistical test suite and the batteries require a lot of data. Crush and Big Crush batteries do not accept binary file assessment, so those are not included. However, Xiphera has piped data directly to the _TestU01_  Crush and Big Crush batteries and the Xipehra TRNG passes both tests. The _TestU01_ - Xiphera edition implements the following batteries found in the _TestU01_ library:
+TestU01 is very comprehensive statistical test suite and the batteries require a lot of data. Crush and Big Crush batteries do not accept binary file assessment, so those are not included. However, ![alt text](https://xiphera.com/img/xiphera_logo_embedded_12pt.png "Xiphera") has piped data directly to the _TestU01_  Crush and Big Crush batteries and the ![alt text](https://xiphera.com/img/xiphera_logo_embedded_12pt.png "Xiphera") TRNG passes both tests. The _TestU01_ - ![alt text](https://xiphera.com/img/xiphera_logo_embedded_12pt.png "Xiphera") edition implements the following batteries found in the _TestU01_ library:
 
  - Rabbit
  - Small Crush
