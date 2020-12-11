@@ -99,8 +99,8 @@ void entropyCalc(char *filename){
 int main (int argc, char** argv)
 {
   swrite_Basic = FALSE;
-
-  for (int i = 1; i < argc; ++i){
+  int i = 1
+  for (i = 1; i < argc; ++i){
     if (access( argv[i], F_OK ) != -1){
       kohta=i;
       printf("File found\n");

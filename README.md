@@ -10,6 +10,8 @@ These test suites require a lot of data to guarantee the statistical quality of 
 
 There are several other widely used assessment suites like NIST STS (SP800-22), NIST SP800-90B, Dieharder, FIPS, AIS-31 and others. These can be used to verify that TRNG complies with standards but are not encouraged otherwise.
 
+Installation guides are provided here that are encouraged, however there is also `install.sh` which does the job, but does not have any guarantee that it will work. All installation are done from this folder and it presumed that there is random file located at `../random/xip8001b.bin`. This is the default location where the  [Xiphera's TRNG AWS](https://www.xilinx.com/products/acceleration-solutions/true-random-number-generator.html "Xiphera AWS implementation guide website") evaluation platform extracts the random binary data file.
+
 ### PractRand
 
 One of the most thorough statistical test suites, is PractRand (Practically Random), a C++ library of also providing statistical tests for any types of RNGs.
@@ -21,13 +23,13 @@ Download and extract the latest version of the software from [SourceForge](https
 ##### Installation
 
 ```bash
-mkdir PractRand
-cd ./PractRand
+mkdir practrand
+cd ./practrand
 wget https://sourceforge.net/projects/pracrand/files/PractRand-pre0.95.zip
 unzip PractRand-pre0.95.zip
-g++ -c src/*.cpp src/RNGs/*.cpp src/RNGs/other/*.cpp -O3 -Iinclude -pthread -std=c++14
+g++ -c src/*.cpp src/RNGs/*.cpp src/RNGs/other/*.cpp -O3 -Iinclude -pthread -std=c++11
 ar rcs libPractRand.a *.o
-g++ -o RNG_test tools/RNG_test.cpp libPractRand.a -O3 -Iinclude -pthread -std=c++14
+g++ -o RNG_test tools/RNG_test.cpp libPractRand.a -O3 -Iinclude -pthread -std=c++11
 rm *.o
 ```
 
@@ -35,7 +37,7 @@ rm *.o
 
 Can be run independently with binary file input as per example:
 ```bash
-cd PractRand
+cd practrand
 cat ../random/xip8001b.bin | ./RNG_test stdin -multithreaded -tlmin 256KB -tlmax 2GB -te 1 -tf 2 -tlshow 1GB
 ```
 Options ( `./RNG_test -h` for more info):
@@ -86,14 +88,13 @@ The C library needs to be made and installed with following example:
 ```bash
 wget http://simul.iro.umontreal.ca/testu01/TestU01.zip
 cd ./TestU01-1.2.3
-./configure # Optionally configure installation location `--prefix=/tools/testu01`
-make
-make install
-# Environment variables, if not default location is not used.
+sudo ./configure # Optionally configure installation location `--prefix=/tools/testu01`
+sudo make
+sudo make install
 # Additionally, copy these to ~/.bashrc also.
-export LD_LIBRARY_PATH=/tools/testu01/lib:${LD_LIBRARY_PATH}
-export LIBRARY_PATH=/tools/testu01/lib:${LIBRARY_PATH}
-export C_INCLUDE_PATH=/tools/testu01/include:${C_INCLUDE_PATH}
+export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+export LIBRARY_PATH=/usr/local/lib:${LIBRARY_PATH}
+export C_INCLUDE_PATH=/usr/local/lib:${C_INCLUDE_PATH}
 ```
 
 ##### xiphera-testu01.c
@@ -108,7 +109,7 @@ gcc xiphera_testu01.c -o xiphera_testu01 -ltestu01 -lprobdist -lmylib -lm
 
 Can be ran independently. Provide the tested file name. The argument `-v` controls the verbosity of the TestU01 tests.
 ``` bash
-./xiphera_testu01 ./tested_file.rnd -v
+./xiphera_testu01 ../random/xip8001b.bin -v
 ```
 
 ### `ent`
@@ -130,14 +131,16 @@ Ent calculates the following statistical attributes:
 
 ```bash
 mkdir ent
+cd ent
 wget http://www.fourmilab.ch/random/random.zip
+unzip random.zip
 make
 ```
 
 ##### Executing independently
 
 ```bash
-./ent ../random/xip8001b.bin # Optionally with bit argument "-b"
+./ent ../../random/xip8001b.bin # Optionally with bit argument "-b"
 ```
 
 
@@ -158,3 +161,18 @@ The argument `-r` denotes rerun tests even if there is results already for that 
 The argument `-d` is passed with the folder to be tested, this allows the script to be ran in batch mode, which enables the testing for a whole folder.  All `*.bin` files inside the directory are tested.
 
 The argument `-l` denotes the legacy mode. In this mode also Dieharder, NIST SP800-22 and SP800-90B test suites are executed. However, this is not necessary and the test suites need to be installed.
+
+##### Legacy dependencies
+
+Can be acquired from the links below. Are needed if `-l` is used on the script
+
+  - [dieharder by Robert G. Brown](https://webhome.phy.duke.edu/~rgb/General/dieharder.php "dieharder by Robert G. Brown Duke University Physics Department")
+  - [NIST SP800-90B Entropy Assessment](https://github.com/usnistgov/SP800-90B_EntropyAssessment "NIST SP800-90B Entropy Assessment")
+  - [NIST SP800-22 STS](https://github.com/dj-on-github/sp800_22_tests "David Johnston python implementation on GitHub")
+
+
+
+
+## Reading the results
+
+If all went well results file should be now available in the `results`-folder. The three test suites clearly state and summarise if there were any errors. Some failures and unusual values suppose to be present, these are random numbers after all, and should randomly fail to be perfectly random. However, if multiple test suites point out same unusual statistical properties there should be something to worry about. Tests can be then applied to other files produced by the same instance to make sure that these failures were just random occurrences.
