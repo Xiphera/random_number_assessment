@@ -43,6 +43,9 @@ aja_testit() {
   printf "\n\n" >> ./results/$1.results
   ./ent/ent $1 |& tee -a ./results/$1.results
   printf "\n Ent results bit by bit \n" >> ./results/$1.results
+
+  echo $'\n'$'\n'"ent results bit by bit:"$'\n'$'\n'
+
   ./ent/ent -b $1 |& tee -a ./results/$1.results
   printf "\n\n" >> ./results/$1.results
 

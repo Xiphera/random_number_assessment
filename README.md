@@ -2,9 +2,9 @@
 
 ## Overview
 
-This is the general guidelines and instructions to run common test suites to random data binary files. This repository does not include any of the test suite softwares, only a script, C application for TestU01 and instructions how to run these softwares. These test suites are provided by a 3rd party and credit goes to them.
+This is the general guidelines and instructions to run common test suites to random data binary files. This repository does not include any of the test suite softwares, only a script, C application for _TestU01_ and instructions how to run these softwares. These test suites are provided by a 3rd party and credit goes to them.
 
-Xiphera uses and recommends using only _practrand_, _gjrand_ and _TestU01_ to assess the quality of the random numbers. There have been several cases where only these three have shown signs of statistical anomalies and several cases where several others have also indicated the same result as these test suites. Literature also praises these two test suites above others.
+![alt text](https://xiphera.com/img/xiphera_logo_embedded.png "Xiphera") uses and recommends using only _practrand_, _gjrand_ and _TestU01_ to assess the quality of the random numbers. There have been several cases where only these three have shown signs of statistical anomalies and several cases where several others have also indicated the same result as these test suites. Literature also praises these two test suites above others.
 
 These test suites require a lot of data to guarantee the statistical quality of the random numbers. Xiphera has piped multiple tebibytes (TiB) of TRNG data to each of these test suites. However, practical and still effective amount of data is between two and four gibibytes (GiB).
 
@@ -79,7 +79,16 @@ cd ./gjrand.4.3.0.0/testunif/
 
 
 ### TestU01
-For xiphera-testu01.c to work, TestU01 library needs to be installed. You can download the library [here](http://simul.iro.umontreal.ca/testu01/TestU01.zip "http://simul.iro.umontreal.ca/testu01/TestU01.zip") or use the `wget` command below.
+
+TestU01 is very comprehensive statistical test suite and the batteries require a lot of data. Crush and Big Crush batteries do not accept binary file assessment, so those are not included. However, Xiphera has piped data directly to the _TestU01_  Crush and Big Crush batteries and the Xipehra TRNG passes both tests. The _TestU01_ - Xiphera edition implements the following batteries found in the _TestU01_ library:
+
+ - Rabbit
+ - Small Crush
+ - Pseudo FIPS 140-2
+ - Alphabit
+ - Block Alphabit
+
+For xiphera-testu01.c to work, _TestU01_ library needs to be installed. You can download the library [here](http://simul.iro.umontreal.ca/testu01/TestU01.zip "http://simul.iro.umontreal.ca/testu01/TestU01.zip") or use the `wget` command below.
 
 [Source](http://simul.iro.umontreal.ca/testu01/tu01.html "simul.iro.umontreal.ca/testu01/tu01.html")
 
@@ -107,7 +116,7 @@ gcc xiphera_testu01.c -o xiphera_testu01 -ltestu01 -lprobdist -lmylib -lm
 
 ##### Executing independently
 
-Can be ran independently. Provide the tested file name. The argument `-v` controls the verbosity of the TestU01 tests.
+Can be ran independently. Provide the tested file name. The argument `-v` controls the verbosity of the _TestU01_ tests.
 ``` bash
 ./xiphera_testu01 ../random/xip8001b.bin -v
 ```
@@ -168,7 +177,7 @@ Can be acquired from the links below. Are needed if `-l` is used on the script
 
   - [dieharder by Robert G. Brown](https://webhome.phy.duke.edu/~rgb/General/dieharder.php "dieharder by Robert G. Brown Duke University Physics Department")
   - [NIST SP800-90B Entropy Assessment](https://github.com/usnistgov/SP800-90B_EntropyAssessment "NIST SP800-90B Entropy Assessment")
-  - [NIST SP800-22 STS](https://github.com/dj-on-github/sp800_22_tests "David Johnston python implementation on GitHub")
+  - [NIST SP800-22 STS python by David Johnston](https://github.com/dj-on-github/sp800_22_tests "David Johnston python implementation on GitHub")
 
 
 
