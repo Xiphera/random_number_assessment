@@ -322,7 +322,7 @@ length= 347.356 megabytes (2^28.440 bytes), time= 118 seconds
 Running TestU01 - Xiphera Edition
 
 File found
-./random_Xilinx_1_20201125_111635.rnd
+./random/xip8001b.bin
 With size of 364230400 bytes, which translates into 91057600 32-bit random words.
 
 Running a Rabbit tests
@@ -331,7 +331,7 @@ Running a Rabbit tests
 ========= Summary results of Rabbit =========
 
  Version:          TestU01 1.2.3
- File:             ./random_Xilinx_1_20201125_111635.rnd
+ File:             ./random/xip8001b.bin
  Number of bits:   2913843200
  Number of statistics:  40
  Total CPU time:   00:08:34.52
@@ -342,7 +342,7 @@ Running a Rabbit tests
 ========= Summary results of SmallCrush =========
 
  Version:          TestU01 1.2.3
- File:             ./random_Xilinx_1_20201125_111635.rnd
+ File:             ./random/xip8001b.bin
  Number of statistics:  15
  Total CPU time:   00:00:06.12
 
@@ -353,7 +353,7 @@ Running FIPS-140-2 tests
 
 ============== Summary results of FIPS-140-2 ==============
 
- File:             ./random_Xilinx_1_20201125_111635.rnd
+ File:             ./random/xip8001b.bin
  Number of bits:   20000
 
        Test          s-value        p-value    FIPS Decision
@@ -388,7 +388,7 @@ Running a Alphabit tests
 ========= Summary results of Alphabit =========
 
  Version:          TestU01 1.2.3
- File:             ./random_Xilinx_1_20201125_111635.rnd
+ File:             ./random/xip8001b.bin
  Number of bits:   2913843200
  Number of statistics:  17
  Total CPU time:   00:01:14.37
@@ -403,7 +403,7 @@ Running a BlockAlphabit tests
 ========= Summary results of Alphabit =========
 
  Version:          TestU01 1.2.3
- File:             ./random_Xilinx_1_20201125_111635.rnd
+ File:             ./random/xip8001b.bin
  Number of bits:   2913843200
  Number of statistics:  17
  Total CPU time:   00:01:50.03
@@ -416,7 +416,7 @@ Running a BlockAlphabit tests
 ========= Summary results of Alphabit =========
 
  Version:          TestU01 1.2.3
- File:             ./random_Xilinx_1_20201125_111635.rnd
+ File:             ./random/xip8001b.bin
  Number of bits:   2913843200
  Number of statistics:  17
  Total CPU time:   00:01:28.72
@@ -429,7 +429,7 @@ Running a BlockAlphabit tests
 ========= Summary results of Alphabit =========
 
  Version:          TestU01 1.2.3
- File:             ./random_Xilinx_1_20201125_111635.rnd
+ File:             ./random/xip8001b.bin
  Number of bits:   2913843200
  Number of statistics:  17
  Total CPU time:   00:01:23.03
@@ -442,7 +442,7 @@ Running a BlockAlphabit tests
 ========= Summary results of Alphabit =========
 
  Version:          TestU01 1.2.3
- File:             ./random_Xilinx_1_20201125_111635.rnd
+ File:             ./random/xip8001b.bin
  Number of bits:   2913843200
  Number of statistics:  17
  Total CPU time:   00:01:23.05
@@ -455,7 +455,7 @@ Running a BlockAlphabit tests
 ========= Summary results of Alphabit =========
 
  Version:          TestU01 1.2.3
- File:             ./random_Xilinx_1_20201125_111635.rnd
+ File:             ./random/xip8001b.bin
  Number of bits:   2913843200
  Number of statistics:  17
  Total CPU time:   00:01:17.00
@@ -468,7 +468,7 @@ Running a BlockAlphabit tests
 ========= Summary results of Alphabit =========
 
  Version:          TestU01 1.2.3
- File:             ./random_Xilinx_1_20201125_111635.rnd
+ File:             ./random/xip8001b.bin
  Number of bits:   2913843200
  Number of statistics:  17
  Total CPU time:   00:01:16.55
