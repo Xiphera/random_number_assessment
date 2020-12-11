@@ -1,0 +1,486 @@
+Test results for file ./random/xip8001b.bin
+
+
+Entropy = 7.999999 bits per byte.
+
+Optimum compression would reduce the size
+of this 364230400 byte file by 0 percent.
+
+Chi square distribution for 364230400 samples is 278.54, and randomly
+would exceed this value 14.89 percent of the times.
+
+Arithmetic mean value of data bytes is 127.5016 (127.5 = random).
+Monte Carlo value for Pi is 3.141616352 (error 0.00 percent).
+Serial correlation coefficient is -0.000019 (totally uncorrelated = 0.0).
+
+
+
+***** MCP version 13 364230400 *****
+
+
+
+============
+binr -c 1/280 (1300822 bytes)
+=======
+dim = 128 ; rnk = 128 ; p = 1
+done 7 matrices ; largest 2304 X 2304
+
+processed in 0 seconds. Wed Nov 25 11:25:31 2020
+
+one sided P value (very small numbers are bad)
+P = 1
+... after 1 tests running guess [p] = 1
+
+
+============
+rda 1/1 (364230400 bytes)
+=======
+chisquare (df=749)  749 (p = 0.494)
+extreme = 0.00137 (283 +) (p = 0.643)
+zero1st = 0.0158 (34 -) (p = 1)
+ext = 1247568 ; exk = 150779 ; expect = 151718
+
+processed 3.6e+08 bytes in 1 seconds. Wed Nov 25 11:25:32 2020
+
+one sided P value (very small numbers are bad)
+P = 0.871
+... after 2 tests running guess [p] = 0.98
+
+
+============
+z9 1/1 (364230400 bytes)
+=======
+mix3 extreme = 1.88319 (lags = 01001) low weight 44
+mix3 extreme = 3.92676 (lags = 0111001) medium weight 378
+mix3 extreme = 3.86731 (lags = 22201201) high weight 6138
+bits per word =  32 : sub-test P value = 0.093
+
+mix3 extreme = 2.15458 (lags = 00100001) low weight 44
+mix3 extreme = 3.19124 (lags = 01111) medium weight 378
+mix3 extreme = 3.84612 (lags = 0212001) high weight 6138
+bits per word = 128 : sub-test P value = 0.8
+
+mix3 extreme = 2.61982 (lags = 0000011) low weight 44
+mix3 extreme = 3.39618 (lags = 00101101) medium weight 378
+mix3 extreme = 4.00464 (lags = 02002112) high weight 6138
+bits per word = 512 : sub-test P value = 0.539
+
+processed 3.6e+08 bytes in 1 seconds. Wed Nov 25 11:25:33 2020
+
+one sided P value (very small numbers are bad)
+P = 0.254
+... after 3 tests running guess [p] = 0.58
+
+
+============
+diff12 1/7 (52032914 bytes)
+=======
+order =  0 : chis =       1950 ;  p = 0.126627
+order =  1 : chis =       2101 ;  p = 0.396793
+order =  2 : chis =       2132 ;  p = 0.186492
+order =  3 : chis =       2077 ;  p = 0.630821
+order =  4 : chis =       2050 ;  p = 0.948489
+order =  5 : chis =       2125 ;  p = 0.227245
+order =  6 : chis =       2115 ;  p = 0.285426
+order =  7 : chis =       2111 ;  p = 0.317353
+order =  8 : chis =       2116 ;  p = 0.279606
+order =  9 : chis =       2172 ;  p = 0.0532421
+order = 10 : chis =       2027 ;  p = 0.757748
+order = 11 : chis =       2160 ;  p = 0.0819933
+
+processed 5.2e+07 bytes in 1 seconds. Wed Nov 25 11:25:34 2020
+
+one sided P value (very small numbers are bad)
+P = 0.481
+... after 4 tests running guess [p] = 0.69
+
+
+============
+lownda 1/2 (182115200 bytes)
+=======
+extreme = 3.75e-05   (13 9 16 +)
+transform = 3.4   (0 7 1)
+pvals (0.369 1)
+
+processed 1.8e+08 bytes in 0 seconds. Wed Nov 25 11:25:34 2020
+
+one sided P value (very small numbers are bad)
+P = 0.602
+... after 5 tests running guess [p] = 0.77
+
+
+============
+nda 1/28 (13008228 bytes)
+=======
+extreme = 0.000104   (8 6 2 +)
+transform = 3.92   (d c 2)
+pvals (0.721 0.657)
+
+processed 1.3e+07 bytes in 0 seconds. Wed Nov 25 11:25:34 2020
+
+one sided P value (very small numbers are bad)
+P = 0.883
+... after 6 tests running guess [p] = 0.83
+
+
+============
+v256 1/1 (364230400 bytes)
+=======
+minimum = 136  (prob =    0.0759498476    0.2077640639)
+maximum = 186  (prob =    0.3802959936    0.7426419081)
+
+expected range [ 14.0 17.8 23.9 44.9 56.1 65.3 ]
+chi-squared =        41.26509
+
+processed 3.6e+08 bytes in 1 seconds. Wed Nov 25 11:25:35 2020
+
+one sided P value (very small numbers are bad)
+P = 0.392
+... after 7 tests running guess [p] = 0.87
+
+
+============
+mod3 1/1 (364230400 bytes)
+=======
+chis =         19696.6 ; df = 19682 ; p = 0.46937
+mix3 extreme = 4.46173 ; p = 0.10119
+
+processed 3.6e+08 bytes in 0 seconds. Wed Nov 25 11:25:35 2020
+
+one sided P value (very small numbers are bad)
+P = 0.192
+... after 8 tests running guess [p] = 0.82
+
+
+============
+selfcor 1/1 (364230400 bytes)
+=======
+forward (msb) : mean=-0.003663 ; sd=0.980793 ; ext = 4.061238 (29290)
+==> p = 0.798
+reverse (lsb) : mean=-0.002890 ; sd=1.006260 ; ext = 4.044969 (2559)
+==> p = 0.82
+
+processed 3.6e+08 bytes in 1 seconds. Wed Nov 25 11:25:36 2020
+
+one sided P value (very small numbers are bad)
+P = 0.959
+... after 9 tests running guess [p] = 0.85
+
+
+============
+rda16 1/12 (30352533 bytes)
+=======
+simple
+chis = 70261 (p = 0.241)
+extreme = 2.05e-05 (19650 -) (p = 0.761)
+zero1st = 0.000585 (14923 -) (p = 1)
+ext = 185 ; exk = 18 ; expect = 37.7
+
+zero1st
+zero1st = 0.000468 (9878 +) (p = 1)
+ext = 196 ; exk = 48 ; expect = 27.4
+
+
+processed 3e+07 bytes in 0 seconds. Wed Nov 25 11:25:36 2020
+
+one sided P value (very small numbers are bad)
+P = 0.669
+... after 10 tests running guess [p] = 0.88
+
+
+============
+z9 -t 1/1 (364230400 bytes)
+=======
+transitions
+mix3 extreme = 2.56288 (lags = 00001) low weight 44
+mix3 extreme = 3.23335 (lags = 20011) medium weight 378
+mix3 extreme = 3.50344 (lags = 0222) high weight 6138
+bits per word =  32 : sub-test P value = 0.748
+
+mix3 extreme = 2.38933 (lags = 01000001) low weight 44
+mix3 extreme = 3.61319 (lags = 01000201) medium weight 378
+mix3 extreme = 3.45902 (lags = 11110022) high weight 6138
+bits per word = 128 : sub-test P value = 0.29
+
+mix3 extreme = 2.03001 (lags = 001) low weight 44
+mix3 extreme = 3.39324 (lags = 00000022) medium weight 378
+mix3 extreme = 3.48129 (lags = 10200212) high weight 6138
+bits per word = 512 : sub-test P value = 0.543
+
+processed 3.6e+08 bytes in 1 seconds. Wed Nov 25 11:25:37 2020
+
+one sided P value (very small numbers are bad)
+P = 0.643
+... after 11 tests running guess [p] = 0.9
+
+
+============
+sh5da 1/1 (364230400 bytes)
+=======
+native byte order : (df=364) chis=375.03  p = 0.334
+extreme = 0.000196 (349 +) (p = 0.0692)
+reverse byte order: (df=364) chis=322.18  p = 0.944
+extreme = 0.00241 (299 -) (p = 0.585)
+
+processed 3.6e+08 bytes in 0 seconds. Wed Nov 25 11:25:37 2020
+
+one sided P value (very small numbers are bad)
+P = 0.249
+... after 12 tests running guess [p] = 0.92
+
+
+============
+slicerda 1/3 (121410133 bytes)
+=======
+expected range [ 633 662 699 799 841 875 ]
+ 0 :       779.91522
+ 2 :       747.69652
+ 4 :       668.91490
+ 6 :       698.99411
+ 8 :       759.27182
+10 :       782.69575
+12 :       723.83053
+14 :       726.76892
+16 :       732.33558
+18 :       728.63384
+20 :       775.03117
+22 :       788.44679
+24 :       761.03503
+26 :       770.87588
+28 :       762.70176
+30 :       764.85459
+extreme = 6.32e-06 (30 732 -)
+pvals (0.931 0.0729)
+
+processed 1.2e+08 bytes in 0 seconds. Wed Nov 25 11:25:37 2020
+
+one sided P value (very small numbers are bad)
+P = 0.14
+
+
+====================
+completed 13 tests
+13 out of 13 tests ok.
+
+
+Overall summary one sided P-value (smaller numbers bad)
+P = 0.859 : ok
+RNG_test using PractRand version 0.95
+RNG = RNG_stdin, seed = unknown
+test set = expanded, folding = extra
+
+rng=RNG_stdin, seed=unknown
+length= 256 kilobytes (2^18 bytes), time= 0.6 seconds
+  no anomalies in 576 test result(s)
+
+rng=RNG_stdin, seed=unknown
+length= 512 kilobytes (2^19 bytes), time= 10.3 seconds
+  no anomalies in 655 test result(s)
+
+rng=RNG_stdin, seed=unknown
+length= 1 megabyte (2^20 bytes), time= 20.0 seconds
+  Test Name                         Raw       Processed     Evaluation
+  [Low1/32]BCFN(0+2,13-9,T)         R= +16.2  p =  8.8e-5   unusual
+  ...and 732 test result(s) without anomalies
+
+rng=RNG_stdin, seed=unknown
+length= 2 megabytes (2^21 bytes), time= 29.5 seconds
+  no anomalies in 811 test result(s)
+
+rng=RNG_stdin, seed=unknown
+length= 4 megabytes (2^22 bytes), time= 39.4 seconds
+  no anomalies in 889 test result(s)
+
+rng=RNG_stdin, seed=unknown
+length= 8 megabytes (2^23 bytes), time= 49.3 seconds
+  no anomalies in 966 test result(s)
+
+rng=RNG_stdin, seed=unknown
+length= 16 megabytes (2^24 bytes), time= 59.1 seconds
+  no anomalies in 1045 test result(s)
+
+rng=RNG_stdin, seed=unknown
+length= 32 megabytes (2^25 bytes), time= 69.1 seconds
+  no anomalies in 1124 test result(s)
+
+rng=RNG_stdin, seed=unknown
+length= 64 megabytes (2^26 bytes), time= 80.0 seconds
+  no anomalies in 1203 test result(s)
+
+rng=RNG_stdin, seed=unknown
+length= 128 megabytes (2^27 bytes), time= 91.8 seconds
+  no anomalies in 1283 test result(s)
+
+rng=RNG_stdin, seed=unknown
+length= 256 megabytes (2^28 bytes), time= 105 seconds
+  no anomalies in 1361 test result(s)
+
+rng=RNG_stdin, seed=unknown
+length= 347.356 megabytes (2^28.440 bytes), time= 118 seconds
+  no anomalies in 1373 test result(s)
+
+Running TestU01 - Xiphera Edition
+
+File found
+./random_Xilinx_1_20201125_111635.rnd
+With size of 364230400 bytes, which translates into 91057600 32-bit random words.
+
+Running a Rabbit tests
+
+
+========= Summary results of Rabbit =========
+
+ Version:          TestU01 1.2.3
+ File:             ./random_Xilinx_1_20201125_111635.rnd
+ Number of bits:   2913843200
+ Number of statistics:  40
+ Total CPU time:   00:08:34.52
+
+ All tests were passed
+
+
+========= Summary results of SmallCrush =========
+
+ Version:          TestU01 1.2.3
+ File:             ./random_Xilinx_1_20201125_111635.rnd
+ Number of statistics:  15
+ Total CPU time:   00:00:06.12
+
+ All tests were passed
+
+Running FIPS-140-2 tests
+
+
+============== Summary results of FIPS-140-2 ==============
+
+ File:             ./random_Xilinx_1_20201125_111635.rnd
+ Number of bits:   20000
+
+       Test          s-value        p-value    FIPS Decision
+ --------------------------------------------------------
+ Monobit              10037           0.30       Pass
+ Poker                15.42           0.42       Pass
+
+ 0 Runs, length 1:     2511                      Pass
+ 0 Runs, length 2:     1286                      Pass
+ 0 Runs, length 3:      607                      Pass
+ 0 Runs, length 4:      333                      Pass
+ 0 Runs, length 5:      150                      Pass
+ 0 Runs, length 6+:     141                      Pass
+
+ 1 Runs, length 1:     2533                      Pass
+ 1 Runs, length 2:     1217                      Pass
+ 1 Runs, length 3:      658                      Pass
+ 1 Runs, length 4:      316                      Pass
+ 1 Runs, length 5:      144                      Pass
+ 1 Runs, length 6+:     160                      Pass
+
+ Longest run of 0:       11           0.91       Pass
+ Longest run of 1:       12           0.70       Pass
+ ----------------------------------------------------------
+ All values are within the required intervals of FIPS-140-2
+
+
+
+Running a Alphabit tests
+
+
+========= Summary results of Alphabit =========
+
+ Version:          TestU01 1.2.3
+ File:             ./random_Xilinx_1_20201125_111635.rnd
+ Number of bits:   2913843200
+ Number of statistics:  17
+ Total CPU time:   00:01:14.37
+
+ All tests were passed
+
+
+
+Running a BlockAlphabit tests
+
+
+========= Summary results of Alphabit =========
+
+ Version:          TestU01 1.2.3
+ File:             ./random_Xilinx_1_20201125_111635.rnd
+ Number of bits:   2913843200
+ Number of statistics:  17
+ Total CPU time:   00:01:50.03
+
+ All tests were passed
+
+
+
+
+========= Summary results of Alphabit =========
+
+ Version:          TestU01 1.2.3
+ File:             ./random_Xilinx_1_20201125_111635.rnd
+ Number of bits:   2913843200
+ Number of statistics:  17
+ Total CPU time:   00:01:28.72
+
+ All tests were passed
+
+
+
+
+========= Summary results of Alphabit =========
+
+ Version:          TestU01 1.2.3
+ File:             ./random_Xilinx_1_20201125_111635.rnd
+ Number of bits:   2913843200
+ Number of statistics:  17
+ Total CPU time:   00:01:23.03
+
+ All tests were passed
+
+
+
+
+========= Summary results of Alphabit =========
+
+ Version:          TestU01 1.2.3
+ File:             ./random_Xilinx_1_20201125_111635.rnd
+ Number of bits:   2913843200
+ Number of statistics:  17
+ Total CPU time:   00:01:23.05
+
+ All tests were passed
+
+
+
+
+========= Summary results of Alphabit =========
+
+ Version:          TestU01 1.2.3
+ File:             ./random_Xilinx_1_20201125_111635.rnd
+ Number of bits:   2913843200
+ Number of statistics:  17
+ Total CPU time:   00:01:17.00
+
+ All tests were passed
+
+
+
+
+========= Summary results of Alphabit =========
+
+ Version:          TestU01 1.2.3
+ File:             ./random_Xilinx_1_20201125_111635.rnd
+ Number of bits:   2913843200
+ Number of statistics:  17
+ Total CPU time:   00:01:16.55
+
+ All tests were passed
+
+
+
+Skipping Legacy test suites: (add -l to run these)
+
+dieharder
+
+NIST SP800-22 test suite
+
+NIST SP800-90b

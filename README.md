@@ -2,11 +2,13 @@
 
 ## Overview
 
-This is the general guidelines and instructions to run common test suites to random data binary files. This repository does not include any of the test suite softwares, only a script, C application for TestU01 and instructions how to run these softwares.
+This is the general guidelines and instructions to run common test suites to random data binary files. This repository does not include any of the test suite softwares, only a script, C application for TestU01 and instructions how to run these softwares. These test suites are provided by a 3rd party and credit goes to them.
 
-Xiphera uses and recommends using only _practrand_, _gjrand_ and _TestU01_ to assess the quality of the random numbers. There have been several cases where only these three have shown signs of statistical anomalies and several cases where several others have also indicated the same. Literature also praises these two test suites above others.
+Xiphera uses and recommends using only _practrand_, _gjrand_ and _TestU01_ to assess the quality of the random numbers. There have been several cases where only these three have shown signs of statistical anomalies and several cases where several others have also indicated the same result as these test suites. Literature also praises these two test suites above others.
 
-There are several other widely used assessment suites like NIST STS (SP800-22), NIST SP800-90B, Dieharder, FIPS and others. These can be used to verify that TRNG complies with standards but are not encouraged otherwise.
+These test suites require a lot of data to guarantee the statistical quality of the random numbers. Xiphera has piped multiple tebibytes (TiB) of TRNG data to each of these test suites. However, practical and still effective amount of data is between two and four gibibytes (GiB).
+
+There are several other widely used assessment suites like NIST STS (SP800-22), NIST SP800-90B, Dieharder, FIPS, AIS-31 and others. These can be used to verify that TRNG complies with standards but are not encouraged otherwise.
 
 ### PractRand
 
@@ -109,11 +111,39 @@ Can be ran independently. Provide the tested file name. The argument `-v` contro
 ./xiphera_testu01 ./tested_file.rnd -v
 ```
 
+### `ent`
+
+The `run_tests.sh` script calculates statistical entropy values with a tool called `ent`. The following values can instantly provide crucial evidence about statistical errors in the random data. The tool provides the Shannon entropy estimation, which is not calculated by other test suites.
+
+[Source netsite](https://www.fourmilab.ch/random/ "fourmilab.ch ent tool homepage")
+
+
+Ent calculates the following statistical attributes:
+ - Shannon entropy
+ - reduced size of optimal compression
+ - chi square distribution
+ - arithmetic mean
+ - Monte Carlo value for Pi
+ - serial correlation coefficient
+
+##### Installation
+
+```bash
+mkdir ent
+wget http://www.fourmilab.ch/random/random.zip
+make
+```
+
+##### Executing independently
+
+```bash
+./ent ../random/xip8001b.bin # Optionally with bit argument "-b"
+```
+
+
 ### run_tests.sh
 
-All of the tests above can be executed sequentially using this script. This script calculates statistical entropy values with a UNIX tool `ent`, which needs to be installed using the following command:
-
-
+All of the tests above can be executed sequentially using this script. The script also collects the results into single text file located in the results directory.
 
 Example, which runs tests for a single file even if there were results already present:
 ```bash
@@ -127,4 +157,4 @@ The argument `-r` denotes rerun tests even if there is results already for that 
 
 The argument `-d` is passed with the folder to be tested, this allows the script to be ran in batch mode, which enables the testing for a whole folder.  All `*.bin` files inside the directory are tested.
 
-The argument `-l` denotes the legacy mode. In this mode also Dieharder, NIST SP800-22 and SP800-90B test suites are executed. However, this is not necessary and the test suites need to be installed. 
+The argument `-l` denotes the legacy mode. In this mode also Dieharder, NIST SP800-22 and SP800-90B test suites are executed. However, this is not necessary and the test suites need to be installed.

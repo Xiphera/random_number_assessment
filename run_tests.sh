@@ -41,9 +41,9 @@ aja_testit() {
 
   #ENT tool
   printf "\n\n" >> ./results/$1.results
-  ent $1 |& tee -a ./results/$1.results
-  printf "\n Entropy results bit by bit \n" >> ./results/$1.results
-  ent -b $1 |& tee -a ./results/$1.results
+  ./ent/ent $1 |& tee -a ./results/$1.results
+  printf "\n Ent results bit by bit \n" >> ./results/$1.results
+  ./ent/ent -b $1 |& tee -a ./results/$1.results
   printf "\n\n" >> ./results/$1.results
 
   echo $'\n'$'\n'"Now running gjrand"$'\n'
