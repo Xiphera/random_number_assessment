@@ -1,4 +1,4 @@
-# ![alt text](https://xiphera.com/img/logo_grey_new.png "Xiphera") Random number assessment
+# ![alt text](https://xiphera.com/img/xiphera_logo_noslogan.png "Xiphera") Random number assessment
 
 ## Overview
 
